@@ -42,3 +42,10 @@ for task in completed_tasks:
   print(task[0], task[1])                     #print
 
 out.close()  #Closing output file for  saving properly
+
+
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line for size and number of people. Then used a loop to get time intervals and then did append those to a list as a tuple.
+#I have used tuple as it's constant and faster. Then I have sorted them using sort function respect to end time in ascending order. Then I have chcecked if next tasks start is equal or greater than the current 
+#end time. if greater or equal then the person can do that work, else not. If can do the task importing the tuple to completed task list. Here the length is the most task that can be completed and 
+#then print all those.
