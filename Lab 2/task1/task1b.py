@@ -39,35 +39,8 @@ else:
 
 out.close()    #Closing output file to save and work properly 
 
-
-
-
-
-
-
-
-
-
-
-# # Reading input
-# N, S = map(int, input().split())
-# numbers = list(map(int, input().split()))
-
-# # Two-pointer approach to find indices with the given sum
-# left, right = 0, N - 1
-# found = False
-# while left < right:
-#     current_sum = numbers[left] + numbers[right]
-#     if current_sum == S:
-#         found = True
-#         break
-#     elif current_sum < S:
-#         left += 1
-#     else:
-#         right -= 1
-
-# # Printing result
-# if found:
-#     print(left + 1, right + 1)  # Adjust indices to 1-based indexing
-# else:
-#     print("IMPOSSIBLE")
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line to get size and total sum. Then read second line, stripping for avoiding extra characters in the end and mapping to int after split.
+# After that used a while loop and checked if current sum is equal to the given total or not. if equal then flag = true and break. If less than total then increase left index as it's sorted and if greater, then increasing right
+#index which we initialized in the begining. After iteration check if flag is true or not. If true then printing output and if still false then the solution is not found. Here we are only using one iteration and so the time
+# complexity becomes O(N).

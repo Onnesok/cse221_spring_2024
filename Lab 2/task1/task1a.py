@@ -35,3 +35,9 @@ if flag == False:                     # Flag = false means no solution found as 
   print("IMPOSSIBLE")
 
 out.close()    #Closing output file to save and work properly 
+
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line to get the size and sum of the number. Initialized a flag to keep track if the value is found or not.
+#Then used a nested loop and checked if values sum == total. if it matches then index will be i+1 and j+1. Then wrote it to output file and also printed them. Then mmade the flag = True to 
+# keep track that the value is found and break the iteration. As we dont need multiple answers and so if the flag=true then the loop will break and no more work is needed. But in the end if it is false
+#that means that the value is not found. Closing the output file in the last to save them properly. Here the solution is O(N^2) as the iteration is nested
