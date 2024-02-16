@@ -44,3 +44,9 @@ out.write(" ".join(str(num) for num in new))  #Writing on output file
 print(" ".join(str(num) for num in new))      #Printing result
 
 out.close()         #Closing output file to save and work properly 
+
+
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line to get the size of the array of alice. Then in second line converted to int and made a array from them. I did the same thing for bob too.
+#After that I have summed up those arrays to create a new array. Then used a loop of n+m size and checked which value is smaller. Small value is added to the new list. Then also extended to check if any value is left behind.
+# Then printed and wrote output. Here as there is just one loop or iteration so here the time complexity is O(n).

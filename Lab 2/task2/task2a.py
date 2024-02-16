@@ -56,3 +56,8 @@ def mergeSort(arr):
 out.write(" ".join(str(num) for num in mergeSort(new)))  #Writing on output file
 print(" ".join(str(num) for num in mergeSort(new)))      #Printing result
 out.close()    #Closing output file to save and work properly 
+
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line to get the size of the array of alice. Then in second line converted to int and made a array from them. I did the same thing for bob too.
+#After that I have summed up those arrays to create a new array. Then wrote merge sort function to sort the unsorted new summed up array. merge sort is used cause it's time complexity is O(nlogn). It works by dividing array
+#in 2 parts and sorting them. After that wrote the output in output file and also printed it. out.close() for properly closing the output file and saving properly.
