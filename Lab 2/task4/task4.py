@@ -55,3 +55,10 @@ else:
     print(max_task(N, M, sorted_on_starttime))
 
 out.close()         #Closing output file to save and work properly 
+
+
+#Explanation
+#Here in this problem, I took input from a designated input file, read first line for size and number of people. Then used a loop to get time intervals, converted them to a tuple in pairs.
+#Here I've used tuple cause it's constant and faster. Then used a function called max_task where checked if start time is equal or greater than the end time of the available person. I have 
+# sorted the time intervals respect to end and start time and sent them through the function to get the most combination of the task. Then comparing the task which is greater. The greater task 
+#is the answer.
