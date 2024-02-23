@@ -10,15 +10,15 @@ f = open(input_path,"r")
 f2 = open(output_path,"w")
 
 #Alice
-N = int(f.readline())
-array1 = f.readline().split(" ")
-array1 = list(map(int, array1))
+N = int(f.readline())  #Reading first line
+array1 = f.readline().split(" ")  #Reading second line and spliting
+array1 = list(map(int, array1)) #Maping into an array
 
 new = array1
 
-
+#Merge sort
 def mergeSort(arr):
-    res = 0
+    res = 0             #Flag where max value will be saved and returned
     if len(arr) > 1:
         mid = len(arr)//2
         L = arr[:mid]
@@ -45,9 +45,11 @@ def mergeSort(arr):
             res = R[j]
             j += 1
             k += 1
+            
+    else:
+        res = arr[0]
     return res
 
 print(mergeSort(new))
-#f2.write(" ".join(str(num) for num in mergeSort(new)))
-#print(" ".join(str(num) for num in mergeSort(new)))
+f2.write(str(mergeSort(new)))
 f2.close()
