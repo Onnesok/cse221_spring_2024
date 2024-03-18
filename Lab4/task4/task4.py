@@ -1,9 +1,9 @@
-############################# Task 3 #################################
+############################# Task 4 #################################
 ######################################################################
 
 #Specify path
-input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task3/input1_1.txt'
-output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task3/output1_1.txt'
+input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task4/input1_1.txt'
+output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task4/output1_1.txt'
 #OPen file
 inp = open(input_path, 'r')
 out = open(output_path, 'w')
@@ -13,10 +13,9 @@ n = int(n)
 m = int(m)
 # Define array size
 arr = [[] for i in range (n + 1)]
-
 #Create list for dfs
 for i in range (m):
-    u, v = inp.readline().strip().split(' ') 
+    u, v = inp.readline().strip().split(' ')
     arr[int(u)].append(int(v))
     arr[int(v)].append(int(u))
   
