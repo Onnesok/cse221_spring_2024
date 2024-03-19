@@ -1,10 +1,10 @@
-############################# Task 5 #################################
+############################# Task 6 #################################
 ######################################################################
 from collections import deque
 
 #Specify path
-input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task5/input1_1.txt'
-output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task5/output1_1.txt'
+input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task6/input1_1.txt'
+output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task6/output1_1.txt'
 #Open file
 inp = open(input_path, 'r')
 out = open(output_path, 'w')
