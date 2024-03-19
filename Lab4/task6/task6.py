@@ -9,52 +9,46 @@ output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab4/task6/output1_1.txt
 inp = open(input_path, 'r')
 out = open(output_path, 'w')
 #Read and split
-n, m, d = inp.readline().strip('\n').split(' ')
-#Creating adjacency list of (n+1)
-adjls = [[] for i in range(int(n)+1)]
+R, H = inp.readline().strip('\n').split(' ')
+grid = []
 
-#BFS traversal
-def BFS(graph, start, end):
-    #Used queue as its bfs
-    queue = deque([(start, [start])])
-    visited = [False] * (len(graph)+1) #visited array for keeping track
-    visited[start] = True
-    while queue:
-        node, p = queue.popleft()
-        if node == end:  #when found destination returning path
-            return p
+def DFS(grid, visited, i, j):
+    if i < 0 or i >= len(grid) or j < 0 or j >= len(grid[0]) or visited[i][j] or grid[i][j] == '#':       #for invalid cases
+        return 0
 
-        for ng in graph[node]:
-            if not visited[ng]:
-                visited[ng] = True
-                queue.append((ng, p + [ng]))
-    return []
+    visited[i][j] = True
+    diamonds = 0
 
-#Creating adjacent list for bfs input
-for i in range(int(m)):
-  u, v = inp.readline().strip('\n').split(' ')
-  adjls[int(u)].append(int(v))
-  adjls[int(v)].append(int(u))
+    if grid[i][j] == 'D':       #If d found adding to diamonds
+        diamonds += 1
+    diamonds += max(DFS(grid, visited, i+1, j), DFS(grid, visited, i-1, j), DFS(grid, visited, i, j+1), DFS(grid, visited, i, j-1))
+    visited[i][j] = False
 
-#Here p is the path
-p = BFS(adjls, 1, int(d))
-s = ''
-#converting p to string adding for desired output format
-for i in p:
-  s+=str(i)+' '
+    return diamonds
 
-if p:
-    #printing time and path
-    print(f'Time: {len(p)-1}\nShortest Path: {s}')
-    out.write(f'Time: {len(p)-1}\nShortest Path: {s}')
+#Reading inputs and maping in grid
+for i in range(int(R)):
+    line = inp.readline().strip('\n')
+    grid.append(line)
+
+#Visited array for keeping track
+visited = [[False]*int(H) for i in range(int(R))]
+maxDiamond = 0 #initializing with 0
+
+for i in range(int(R)):
+    for j in range(int(H)):
+        if grid[i][j] == '.':  # If . then I can go and so checking
+            diamonds = DFS(grid, visited, i, j)
+            maxDiamond = max(maxDiamond, diamonds)
+            
+            
+print(maxDiamond)            
+out.write(str(maxDiamond))
 
 
 out.close()  #closing output file for safety and saving without delay
 
+
 #Explanation
-# Took input from a file, splited and got n, m and d. Now created adjacency list and bfs function. In last part of the code iterated and created adjls for iteration and called bfs function where adjacency list , start and destination is given.
-#In bfs function While the queue is not empty, it dequeues a node and its path and if node is found then returns path. Else it iterates through the adjacent nodes and keeps adding unvisited neighbors to the queue with the updated path and marks them as visited.
-#Last part converted path to string and if p is not null printed time and path.
-
-
-
+# Here I am taking input from file and spliting and then by iteration making a grid for easier traversal. Now Calling dfs function where I am checking first if case is valid or not. Then checking for diamonds and adding if found. Do this recursively and from the return value
+# printing the output.
