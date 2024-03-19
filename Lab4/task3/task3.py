@@ -36,3 +36,8 @@ def DFS(g, start):
     
 DFS(arr, 1)
 out.close()
+
+
+#Explanation
+#First specified path, opened file, readline, converted to int for use, defined array length, created list for bfs traversal. Now wrote a function called DFS, used stack to do the operation and chk for keeping track of visited edges.
+#For answer used a res string. If node is not in chk then added to res and inserted to chk to remember the operation. Last we need reverse value, so reversed and extended to array. Now write answer to the file.
