@@ -18,8 +18,7 @@ for i in range (m):
     u, v = inp.readline().strip().split(' ')
     arr[int(u)].append(int(v))
 
-print(arr)
-
+#DFS traversal
 def DFS(g, start, visited, stack):
     visited[start] = True
     stack[start] = True
@@ -33,7 +32,7 @@ def DFS(g, start, visited, stack):
     stack[start] = False
     return False
 
-def hasCycle(g):
+def cycle(g):
     visited = [False] * (n + 1)
     stack = [False] * (n + 1)
 
@@ -43,15 +42,18 @@ def hasCycle(g):
                 return True
     return False
 
-if hasCycle(arr):
+if cycle(arr):
     out.write("YES")
     print("YES")
 else:
     out.write("NO")
     print("NO")
 
-out.close()
+out.close()  #closing output file for safety and saving without delay
 
 
 
-##### ki hoise bujhi nai
+#Explanation
+#Here I have used 2 functions to work with easily. Here cycle function checks if there is any cycle in the graph and returns True or False. In cycle function visited array of length n+1 keeps track of the visited nodes and stack is used as I have used dfs. Then iterated and 
+# if not visited then called DFS function and checked the traversal. DFS also returns True or false. If neighbour is not visited then recursively call itself and if visited and is in the current recursion stack then cycle is detected. If no cycle detected then it marks start node as not in the
+#stack and returns false. According to this now wrote output in file if cycle detected or not.
