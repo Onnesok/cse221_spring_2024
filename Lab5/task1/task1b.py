@@ -61,3 +61,7 @@ else:
 inp.close() #Closing for safety
 out.close() #Closing for safely saving
 
+#Explanation
+# Here took input from file by specifying path, opened file, split and got n, m. Also there is a global variable result[] array to store result. Used this global variable for static charactristic.
+#First took empty array of n+1 length and indeg. Then reading A, B and appending in array and indeg. Visited is empty set and here iterating through each nodes with in degree 0 and not visited before.
+# Now bfs is checking if every node is visited or not and indeg of neighbor is 0. If every node is visited then we got the anser and else it's not possible.
