@@ -36,9 +36,9 @@ for i in range(n+1):
 
 InDeg = [0]*(n+1)
 for i in range(m):
-    s,d = map(int, inp.readline().split())
-    D[s].append(d)
-    InDeg[d] += 1
+    A,B = map(int, inp.readline().split())
+    D[A].append(B)
+    InDeg[B] += 1
 
 visited = set()
 
@@ -57,3 +57,7 @@ else:
 
 inp.close()
 out.close()
+
+#Explanation
+# Here reading input from file, spliting n,m. Here D is an empty dictionary to represent adjacency list. Initialize n+1 length of indeg. Now, traversing and spliting A, B and updating D and indeg. Initialized empty set called visited. Now starting bfs for indeg 0. Now checking if all nodes are visited or not.
+#If not visited then Impossible. Else, printing topological ordering of all nodes. Here topological ordering is done using priority queue and thats why heapq in imported. Now print result and write in output file. Closing input and output file for safely saving.
