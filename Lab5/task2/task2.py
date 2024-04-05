@@ -23,10 +23,10 @@ def bfs(G, v, visited, Indeg):
 
 input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab5/task2/input.txt'
 output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab5/task2/output.txt'
-f1 = open(input_path, 'r')
-f2 = open(output_path, 'w')
+inp = open(input_path, 'r')
+out = open(output_path, 'w')
 
-n,m = map(int, f1.readline().split())
+n,m = map(int, inp.readline().split())
 
 D = {}
 for i in range(n+1):
@@ -34,7 +34,7 @@ for i in range(n+1):
 
 InDeg = [0]*(n+1)
 for i in range(m):
-    s,d = map(int, f1.readline().split())
+    s,d = map(int, inp.readline().split())
     D[s].append(d)
     InDeg[d] += 1
 
@@ -46,11 +46,12 @@ for i in range(1,n+1):
 
 # if it fails to visit all nodes/ver.
 if len(result) < n:
-    print('IMPOSSIBLE',end='',file=f2)
+    print("IMPOSSIBLE")
+    out.write('IMPOSSIBLE')
 else:
     # print list to output format
     print(str(result).strip('[]').replace(',',''))
-    f2.write(str(result).strip('[]').replace(',',''))
+    out.write(str(result).strip('[]').replace(',',''))
 
-f1.close()
-f2.close()
+inp.close()
+out.close()
