@@ -40,7 +40,6 @@ for i in range(m):
     arr[A].append(B)
     InDeg[B] += 1
     
-print(arr, InDeg)
 #Empty set for populating with unique nodes    
 visited = set()
 
