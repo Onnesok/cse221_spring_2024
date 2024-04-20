@@ -61,11 +61,3 @@ out.close() #Closing for safely saving
 #First took empty array of n+1 length and indeg. Then reading A, B and appending in array and indeg. Visited is empty set and here iterating through each nodes with in degree 0 and not visited before. Dfs 
 #function is used recursively here . Dfs function conducts traversal recursively, visiting neighbors of a given vertex while decrementing their in-degree. It ensures traversal only to unvisited neighbors with
 # an in-degree of 0. Now if no node is left unvisited or every node is visited then We got the result. Else impossible and writing to output.
-
-
-
-
-
-
-
-
