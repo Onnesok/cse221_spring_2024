@@ -1,42 +1,33 @@
-############################# Task 1 #################################
-######################################################################
-#Specify path
-input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab7/task1/input.txt'
-output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab7/task1/output.txt'
-#Open file
-inp = open(input_path, 'r')
-out = open(output_path, 'w')
+def find(parent, i):
+    if parent[i] == i:
+        return i
+    parent[i] = find(parent, parent[i])
+    return parent[i]
 
-t=list(map(int,inp.readline().split()))  
+def union(parent, size, x, y):
+    root_x = find(parent, x)
+    root_y = find(parent, y)
+    if root_x != root_y:
+        if size[root_x] < size[root_y]:
+            root_x, root_y = root_y, root_x
+        parent[root_y] = root_x
+        size[root_x] += size[root_y]
+        return size[root_x]
+    return size[root_x]
 
-parent=[0]*(t[0]+1)
-size=[0]*(t[0]+1)
+def friend_circle_size(N, K, queries):
+    parent = [i for i in range(N)]
+    size = [1] * N
+    result = []
+    for query in queries:
+        A, B = query
+        result.append(union(parent, size, A - 1, B - 1))
+    return result
 
-def make_set(vertex):
-    parent[vertex]=vertex
-    size[vertex]=1
+# Input
+N, K = map(int, input().split())
+queries = [list(map(int, input().split())) for _ in range(K)]
 
-def find_parent(vertex):
-    if parent[vertex]==vertex:
-        return vertex
-    parent[vertex] = find_parent(parent[vertex])
-    return parent[vertex]
-
-def union_set(x,y):
-    x=find_parent(x)
-    y=find_parent(y)
-    if x!=y:
-        if size[x]<size[y]:
-            temp=x
-            x=y
-            y=temp
-
-        parent[y]=x
-        size[x]+=size[y]
-    out.write(str(size[x])+"\n")
-
-for size in union_set(parent, t):
+# Output
+for size in friend_circle_size(N, K, queries):
     print(size)
-
-
-
