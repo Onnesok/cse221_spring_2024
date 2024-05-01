@@ -24,9 +24,19 @@ def friend_circle_size(N, K, queries):
         result.append(union(parent, size, A - 1, B - 1))
     return result
 
-# Input
-N, K = map(int, input().split())
-queries = [list(map(int, input().split())) for _ in range(K)]
+
+
+#Specify input file path
+input_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab7/task1/input.txt'
+output_path = 'C:/Users/ASUS/Desktop/cse221_spring_2024/Lab7/task1/output.txt'
+#Open file
+inp = open(input_path, 'r')
+out = open(output_path, 'w')
+
+# Reading input
+N, K = map(int, inp.readline().split())
+
+queries = [list(map(int, inp.readline().split())) for i in range(K)]
 
 # Output
 for size in friend_circle_size(N, K, queries):
