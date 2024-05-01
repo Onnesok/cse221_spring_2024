@@ -41,3 +41,13 @@ queries = [list(map(int, inp.readline().split())) for i in range(K)]
 # Output
 for size in friend_circle_size(N, K, queries):
     print(size)
+    out.write(f"{str(size)}\n")
+    
+    
+out.close()    
+    
+
+#Explanation
+# Here I am taking input from a specified file location, reading and spliting and saving in variables. Then, iterate and sending N, K and queries to friend_circle_size() function where it returns results. In friend_circle_size() function, I am initializing arrays for operations and doing query operations.
+# Unpacked A, B and  sending to union() function to merge disjoint sets. And from union() to find root of the set sending data to find() function. Here, I have used multiple functions to increase usablity.
+# In the end printing and saving output and out.close() for safely saving output.
