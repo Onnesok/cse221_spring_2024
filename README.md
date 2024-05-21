@@ -24,4 +24,4 @@ Don't use these code as if it's your own code..... Never use these to cheat in a
 There may be errors in my code haha ..... be aware....    :3
 
 
-![copy](https://cdn.dopl3r.com//media/memes_files/hey-can-i-copy-your-homework-sure-just-make-it-look-diffrerent-so-that-it-doesnt-look-like-you-just-copied-it-sure-thing-z2Xgy.jpg)
+![copy](https://i.pinimg.com/736x/f8/92/8f/f8928f8acdcb4356bba62577e89c3c82.jpg)
